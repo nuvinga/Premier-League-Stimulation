@@ -1,0 +1,28 @@
+<div class="search-matches-section">
+
+  <!-- THIS CODE USES ANGULAR MATERIAL
+ Therefore, references has been made to the angular material documentation -->
+
+  <h1 class="search-section-title">Search for matches by date</h1>
+
+  <!-- The search field -->
+  <div class="search-bar-div">
+    <mat-form-field color="accent">
+      <mat-label >Enter or select date</mat-label>
+      <input matInput [formControl]="dateFormControl" type="date" [(ngModel)]="value">
+      <mat-error *ngIf="dateFormControl.hasError('isaDateError') && !dateFormControl.hasError('required')">
+        Please enter a valid date </mat-error> <!-- Error if the date is invalid or not up to the requirements -->
+      <mat-hint>Please enter the date for search</mat-hint>
+      <mat-error *ngIf="dateFormControl.hasError('required')">Date is <strong>essential</strong> for search</mat-error>
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <!-- The search option of the form -->
+  <div style="padding-top: 1vw">
+    <button mat-raised-button color="warn" (click)="openTableDialog()">Search</button>
+  </div>
+
+</div>

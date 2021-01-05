@@ -1,0 +1,59 @@
+
+<div style="width: 40vw">
+
+  <!-- THIS CODE USES ANGULAR MATERIAL
+ Therefore, references has been made to the angular material documentation -->
+
+  <h2 mat-dialog-title style="text-align: center; color: #3ed972; font-family: 'Poppins', sans-serif">Match Results</h2>
+
+  <!-- Content to show if the data loading is taking longer than usual, and therefore, dataLoaded is false -->
+  <mat-dialog-content *ngIf="dataLoaded==false" class="mat-typography">
+    <p style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500;">The match is still generating. Please wait</p>
+  </mat-dialog-content>
+
+  <!-- Content to show if the data has a false status, representing a failure in data loading -->
+  <mat-dialog-content *ngIf="status==false && dataLoaded==true" class="mat-typography">
+    <p style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500;">We encountered an unexpected error.<br>This maybe because you do not have enough clubs to generate a match</p>
+  </mat-dialog-content>
+
+  <!-- Content to show if the data loading is successful, status is true and the match is NOT a draw -->
+  <mat-dialog-content *ngIf="draw==false && status==true && dataLoaded==true" class="mat-typography">
+    <div>
+      <p style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500;">Date</p>
+      <p style="text-align: center; padding-bottom: .5vw">{{date}}</p>
+      <p style="text-align: center; padding-bottom: 2vw">{{homeTeam}} &#38; {{awayTeam}}</p>
+
+      <p style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 17px; color: darkorange">Winner</p>
+      <p style="text-align: center; padding-bottom: .75vw">{{winner}}</p>
+      <p style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: 400;">Runner Up</p>
+      <p style="text-align: center; padding-bottom: 2vw">{{runnerUp}}</p>
+
+      <p style="text-align: center;">Home Team goals: {{gsHome}}</p>
+      <p style="text-align: center;">Away Team goals: {{gsAway}}</p>
+    </div>
+  </mat-dialog-content>
+
+  <!-- Content to show if the data loading is successful, status is true and the match IS a draw -->
+  <mat-dialog-content *ngIf="draw==true && status==true && dataLoaded==true" class="mat-typography">
+    <div>
+      <p style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500;">Date</p>
+      <p style="text-align: center; padding-bottom: .5vw">{{date}}</p>
+      <p style="text-align: center; padding-bottom: 2vw">{{homeTeam}} &#38; {{awayTeam}}</p>
+
+      <p style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 17px; color: darkorange">Draw</p>
+      <p style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: 400;">Home Team</p>
+      <p style="text-align: center; padding-bottom: .75vw">{{winner}}</p>
+      <p style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: 400;">Away Team</p>
+      <p style="text-align: center; padding-bottom: 2vw">{{runnerUp}}</p>
+
+      <p style="text-align: center;">Home Team goals: {{gsHome}}</p>
+      <p style="text-align: center;">Away Team goals: {{gsAway}}</p>
+    </div>
+  </mat-dialog-content>
+
+  <!-- Action buttons for the dialog -->
+  <mat-dialog-actions align="center">
+    <button mat-button mat-dialog-close>Okay</button>
+  </mat-dialog-actions>
+
+</div>

@@ -1,0 +1,28 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Server server request to get Clubs to show in data table
+GET     /api/getClubs        controllers.HomeController.getClubs
+
+# Server server request to get Clubs to show in data table
+GET     /api/getWinsSortClubs        controllers.HomeController.getWinsSortClubs
+
+# Server server request to get Clubs to show in data table
+GET     /api/getGoalsSortClubs       controllers.HomeController.getGoalsSortClubs
+
+# Server server request to get Clubs to show in data table
+GET     /api/getMatches       controllers.HomeController.getMatches
+
+# Server server request to get Clubs to show in data table
+GET     /api/generateMatch       controllers.HomeController.generateMatch
+
+# Server server request to get Clubs to show in data table
+GET     /api/searchForDate/date:date       controllers.HomeController.search(date)
+
+
+# Default Routes
+# ~~~~
+
+# Serve index page from public directory
+GET     /                           controllers.FrontendController.index()

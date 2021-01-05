@@ -1,0 +1,21 @@
+.search-matches-section {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  background-color: #424242;
+  justify-content: center;
+}
+
+.search-matches-section mat-form-field {
+  min-width: 15vw;
+}
+
+.search-matches-section .search-section-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  align-items: center;
+  color: #69F0AE;
+}

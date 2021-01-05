@@ -1,0 +1,86 @@
+
+<section class="matches-view-section">
+
+  <!-- THIS CODE USES ANGULAR MATERIAL
+ Therefore, references has been made to the angular material documentation -->
+
+  <h1 class="matches-section-title">Matches Played</h1>
+
+  <!-- To run if data loading is not complete, therefore, dataLoaded is false -->
+  <div *ngIf="dataLoaded==false && status==false" style="padding-top: 5vh">
+    <p style="color: #FFFFFF; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500;">
+      The matches are is still loading. Please wait</p>
+  </div>
+
+  <!-- To run if dataLoaded is true, however, the response status is false -->
+  <div *ngIf="dataLoaded==true && status==false" style="padding-top: 5vh">
+    <p style="color: #FFFFFF; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500;">
+      The matches cannot be loaded at the moment.<br>Please check if any matches have been registered using the
+      Premier League Console</p>
+  </div>
+
+  <!-- To run if dataLoaded is true and the response status is true. However, no played matches -->
+  <div *ngIf="matchData.length==0 && dataLoaded==true && status==true" style="padding-top: 5vh">
+    <p style="color: #FFFFFF; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500;">
+      No played matches to show.<br>You can either use the generator option to generate new matches, or the Premier
+    League Console to add new played matches.</p>
+  </div>
+
+  <!-- To run if dataLoaded is true and the response status is true. Therefore the tables can be shown -->
+  <div *ngIf="matchData.length>0 && dataLoaded==true && status==true">
+
+    <!-- Search bar using inbuilt functions -->
+    <div class="text-field-div">
+      <mat-form-field color="accent">
+        <mat-label >Search matches</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. 26/12/2020/ Club Name">
+      </mat-form-field>
+    </div>
+
+    <!-- Mat-table showing matches -->
+    <table mat-table [dataSource]="matchData" >
+
+      <!-- Date Played Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date Played </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+
+      <!-- Home Club Column -->
+      <ng-container matColumnDef="teamOne">
+        <th mat-header-cell *matHeaderCellDef> Home Club </th>
+        <td mat-cell *matCellDef="let element"> {{element.teamOne}} </td>
+      </ng-container>
+
+      <!-- Goals Scored Home Club Column -->
+      <ng-container matColumnDef="scoreTeamOne">
+        <th class="scores" mat-header-cell *matHeaderCellDef> GS- Home </th>
+        <td mat-cell *matCellDef="let element"> {{element.scoreTeamOne}} </td>
+      </ng-container>
+
+      <!-- Away Club Column -->
+      <ng-container matColumnDef="teamTwo">
+        <th mat-header-cell *matHeaderCellDef> Away Club </th>
+        <td mat-cell *matCellDef="let element"> {{element.teamTwo}} </td>
+      </ng-container>
+
+      <!-- Goals Scored Away Club Column -->
+      <ng-container matColumnDef="scoreTeamTwo">
+        <th class="scores" mat-header-cell *matHeaderCellDef> GS- Away </th>
+        <td mat-cell *matCellDef="let element"> {{element.scoreTeamTwo}} </td>
+      </ng-container>
+
+      <!-- Result Column -->
+      <ng-container matColumnDef="winTeam">
+        <th class="result" mat-header-cell *matHeaderCellDef> Result </th>
+        <td mat-cell *matCellDef="let element"> {{element.winTeam}} </td>
+      </ng-container>
+
+      <!-- Inserting data -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+  </div>
+
+</section>
