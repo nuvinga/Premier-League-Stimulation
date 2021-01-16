@@ -38,13 +38,15 @@ inorder to configure the application to a different java version. If not properl
 
 All the enities, controllers, and services have been seperetly categorized into folders.
 
-## Indexed in Turn-It In Global Referencing Scheme
-
-***This project should not be used for any coursework related activity and all codes have been submitted to `Turn-It In global referencing platform`, where usage of this code may be caught for Plagiarism.***
-
 ## Special Thanks
 
 Special thanks goes out to [Yohan Gomez][yohan-profile] and his team, for the connected [java-play-angular-seed][seed-link] which helped immensely in completion of the application on deadlines.
+
+.
+
+# Indexed in Turn-It In Global Referencing Scheme
+
+***This project should not be used for any coursework related activity and all codes have been submitted to `Turn-It In global referencing platform`, where usage of this code may be caught for Plagiarism.***
 
 [nuvin-profile]: https://github.com/nuvinga
 [seed-link]: https://github.com/yohangz/java-play-angular-seed
