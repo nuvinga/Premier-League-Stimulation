@@ -25,8 +25,18 @@ The command line interface of this application, available in;
 ```
 containing all Java files, allows the user to perform the following functions;
 ```
-    
+    [1] - Add new club to Premier League
+    [2] - Remove club from Premier League
+    [3] - View club statistics
+    [4] - View Premier League Table
+    [5] - Add new match results
+    [6] - Save all changes to file as new version
+    [7] - Load last saved version
+    [8] - Open GUI Application
+    [9] - Exit Application
 ```
+
+The java version is forced to run in version 1.8. If not installed and available, the application will not run. If someone wants configure the application to a different java version, they need to move into;
 
 ### Angular-built Web-based application
 
