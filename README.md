@@ -1,40 +1,48 @@
-[![MIT License][license-badge]][LICENSE]
 
-# Java Play Angular Seed
+# English Premier League Stimulation Application
 
-> Use play framework to develop the web application backend/services and frontend using Angular CLI, all in a totally integrated workflow and single unified console. This approach will deliver perfect development experience without CORS hassle. 
+> Developed by: Nuwin Hansitha Godakanda Arachchi
 
-Read more @ http://bit.ly/2AStvhK
-
-[![Java Play Angular Seed](https://github.com/yohangz/java-play-angular-seed/blob/master/angular.png)](http://bit.ly/2AStvhK)
+This application was built as partial completion of my second year reading for the B.Eng. (Hons) Software Engineering undergraduate degree, from the University of Westminster.
 
 ## Used Versions
 
-* [Play Framework: 2.8.0](https://www.playframework.com/documentation/2.8.x/Home)
-* [Angular: 8.x.x](https://angular.io/)
-* [Angular CLI: 8.0.3](https://cli.angular.io/)
+* [Play Framework: 2.8](https://www.playframework.com/documentation/2.8.x/Home)
+* [Angular: 11.0.8](https://angular.io/docs)
+* [Angular CLI: 11.0.8](https://cli.angular.io/)
+* [Java: 1.8](https://www.java.com/en/)
+
+## About the stimulation
+
+### Command Line Interface Application
+
+The command line interface of this application, available in;
+```
+    ├── /app/                                 
+    │     └── /Applications/                   
+    │           └── ConsoleApplication.java
+    |           └── GraphicalApplicationJavaFX.java
+```
+containing all Java files, allows the user to perform the following functions;
+```
+    
+```
+
+### Angular-built Web-based application
 
 ## How to use it?
 
 ### Prerequisites
 
 * [Node.js](https://nodejs.org/) (version 10 or higher)
-* [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (recommend version 1.8 or higher)
+* [Java-DK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (version 1.8 (back-end has been configured to this version))
 
 ### Let's get started,
 
-* Fork or clone this repository.
-
-* Used any of the following [SBT](http://www.scala-sbt.org/) commands which will intern trigger frontend associated npm scripts.
+* Using any of the following [SBT](http://www.scala-sbt.org/) commands which will intern trigger frontend associated npm scripts.
 
 ```
-    sbt clean           # Clean existing build artifacts
-
-    sbt stage           # Build your application from your project’s source directory
-
     sbt run             # Run both backend and frontend builds in watch mode
-
-    sbt dist            # Build both backend and frontend sources into a single distribution artifact
 
     sbt test            # Run both backend and frontend unit tests
 ```
