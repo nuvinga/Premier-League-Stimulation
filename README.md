@@ -51,3 +51,4 @@ Special thanks goes out to [Yohan Gomez][yohan-profile] and his team, for the co
 [nuvin-profile]: https://github.com/nuvinga
 [seed-link]: https://github.com/yohangz/java-play-angular-seed
 [yohan-profile]: https://github.com/yohangz
+
